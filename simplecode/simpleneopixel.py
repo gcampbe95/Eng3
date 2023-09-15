@@ -11,9 +11,11 @@ pixels = neopixel.NeoPixel(board.NEOPIXEL, num_pixels, brightness=BRIGHTNESS, au
 while True:
      pixels.fill((255, 0, 0))
      pixels.show()
-     #time.sleep(0.01)
-     #pixels.fill((0, 255, 0))
-     #time.sleep(0.5)
-     #pixels.fill((0, 0, 255))
-     #time.sleep(0.5)
+     time.sleep(0.5)
+     pixels.fill((0, 255, 0))
+     pixels.show()
+     time.sleep(0.5)
+     pixels.fill((0, 0, 255))
+     pixels.show()
+     time.sleep(0.5)
      
