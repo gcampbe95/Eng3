@@ -5,12 +5,14 @@ import time
 import adafruit_hcsr04
 sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D6)
 from rainbowio import colorwheel
-import neopixel 
+import neopixel
+from adafruit_simplemath import map_range
+from adafruit_simplemath import map_unconstrained_range
+
 r = 255
 g = 0
 b = 0
 
-color = (r, g, b)
 red = (255, 0, 0) # 5
 magenta = (255, 0, 255) # 12.5
 blue = (0, 0, 255) # 20
@@ -32,20 +34,24 @@ while True:
             pixels.fill(green)
             pixels.show()
         if (5 < sonar.distance) and (sonar.distance <= 12.5):
-            b = (b + 1) % 256
-            pixels.fill(colorwheel(color))
+            map_unconstrained_range(b, 0, 255, sonar.distance, 5, 12.5)
+            color = (r, g, b)
+            pixels.fill((color))
             pixels.show()
         if (12.5 < sonar.distance) and (sonar.distance <= 20):
-            r = (r - 1) % 256
-            pixels.fill(colorwheel(color))
+            map_unconstrained_range(r, 255, 0, sonar.distance, 12.5, 20)
+            color = (r, g, b)
+            pixels.fill((color))
             pixels.show()
         if (20 < sonar.distance) and (sonar.distance <= 27.5):
-            g = (g + 1) % 256
-            pixels.fill(colorwheel(color))
+            map_unconstrained_range(g, 0, 255, sonar.distance, 20, 27.5)
+            color = (r, g, b)
+            pixels.fill((color))
             pixels.show()
         if (27.5 < sonar.distance) and (sonar.distance < 35):
-            b = (b - 1) % 256
-            pixels.fill(colorwheel(color))
+            map_unconstrained_range(b, 255, 0, sonar.distance, 27.7, 35)
+            color = (r, g, b)
+            pixels.fill((color))
             pixels.show()
     except RuntimeError:
         print("Retrying!")

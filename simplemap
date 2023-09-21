@@ -1,0 +1,8 @@
+import board
+import time
+from adafruit_simplemath import map_unconstrained_range
+value = 1 
+
+while True:
+    map_unconstrained_range(value, 0, 255, 0, 7.5)
+    print(value, ":)")
