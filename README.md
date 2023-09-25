@@ -165,6 +165,8 @@ Once I had all these pieces, I combined them into my full code which can be foun
 
 ### Evidence
 
+![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
+
 ### Wiring
 [tinkercad.com](https://www.tinkercad.com/learn/circuits).  If you can't find the particular part you need, get creative, and just drop a note into the circuit diagram, explaining.
 For example, I use an Arduino Uno to represent my Circuitpython device but write a note saying which board I'm actually using.
