@@ -168,9 +168,18 @@ Once I had all these pieces, I combined them into my full code which can be foun
 ![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
 
 ### Wiring
-[tinkercad.com](https://www.tinkercad.com/learn/circuits).  If you can't find the particular part you need, get creative, and just drop a note into the circuit diagram, explaining.
-For example, I use an Arduino Uno to represent my Circuitpython device but write a note saying which board I'm actually using.
-Then post an image here.   [Here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
-### Reflection
-Don't just tell the reader what went wrong or was challenging!  Describe how you figured it out, share the things that helped you succeed (tutorials, other people's repos, etc.), and then share what you learned from that experience.  **Your underlying goal for the reflection, is to concisely pass on the RIGHT knowledge that will help the reader recreate this assignment better or more easily.  Pass on your wisdom!**
+Wiring for this code can be found here: 
+**https://www.tinkercad.com/things/8jPgL02bwfb?sharecode=Yq47arHhx7T9tyG5EsO7KpIhFaA4cjIe9BHEPfdqQR8**
 
+![](../../Pictures/WIN_20230925_11_13_32_Pro%20-%20Trim.mp4)
+
+### Reflection
+The easiest way to approach this was to break it into more manageable parts, such as checking the function of my ultrasonic sensor, writing simpler pieces of neopixel code to make sure I understood it before moving on to more advanced functions like gradients, and mapping simple ranges and printing the result. I spent a lot of time on this because I was trying to come up with a solution using variables and adding/subtracting from rgb values incrementally instead of mapping. The solution that ended up working was naming colors and distances at the top to keep my values organized, like this...
+```
+red = (255, 0, 0) # 5
+magenta = (255, 0, 255) # 12.5
+blue = (0, 0, 255) # 20
+cyan = (0, 255, 255) # 27.5
+green = (0, 255, 0) # 35
+```
+... and then naming these as initial rgb values for each range individually. After that I mapped the changing value to distance to get a smooth color transition. That's it! It took a lot of time for me to realize that the best solution was actually the simplest, but I could've probably avoided that if I had organized my tasks better and written some pseudocode beforehand. 
