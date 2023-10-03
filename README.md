@@ -81,7 +81,7 @@ Once I had all these pieces, I combined them into my full code which can be foun
 
 ### Evidence
 
-![](https://im5.ezgif.com/tmp/ezgif-5-26f0c9e095.mp4)
+![](C:\Users\gcampbe95\Downloads\ezgif-5-0dd6a09949.gif)
 
 ### Wiring
 Wiring for this code can be found here: 
