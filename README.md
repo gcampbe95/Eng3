@@ -81,7 +81,7 @@ Once I had all these pieces, I combined them into my full code which can be foun
 
 ### Evidence
 
-![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
+![](https://im5.ezgif.com/tmp/ezgif-5-26f0c9e095.mp4)
 
 ### Wiring
 Wiring for this code can be found here: 
@@ -147,12 +147,4 @@ Wiring for this code can be found here (procede with caution):
 ![](../../Pictures/WIN_20230925_11_13_32_Pro%20-%20Trim.mp4)
 
 ### Reflection
-The easiest way to approach this was to break it into more manageable parts, such as checking the function of my ultrasonic sensor, writing simpler pieces of neopixel code to make sure I understood it before moving on to more advanced functions like gradients, and mapping simple ranges and printing the result. I spent a lot of time on this because I was trying to come up with a solution using variables and adding/subtracting from rgb values incrementally instead of mapping. The solution that ended up working was naming colors and distances at the top to keep my values organized, like this...
-```
-red = (255, 0, 0) # 5
-magenta = (255, 0, 255) # 12.5
-blue = (0, 0, 255) # 20
-cyan = (0, 255, 255) # 27.5
-green = (0, 255, 0) # 35
-```
-... and then naming these as initial rgb values for each range individually. After that I mapped the changing value to distance to get a smooth color transition. That's it! It took a lot of time for me to realize that the best solution was actually the least complicated, but I could've probably avoided that if I had organized my tasks better and written some pseudocode beforehand. 
+The most important parts of this assignment were wiring carefully and not overcomplicating it. It 
