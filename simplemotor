@@ -2,10 +2,10 @@ import board
 import time
 from analogio import AnalogIn
 import pwmio
-from adafruit_simplemath import map_unconstrained_range
 
 potentiometer = AnalogIn(board.A0)
 pwm = pwmio.PWMOut(board.D6)
 
 while True:
     print((potentiometer.value))
+    pwm.duty_cycle = potentiometer.value

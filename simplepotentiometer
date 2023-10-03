@@ -1,5 +1,5 @@
-import time
 import board
+import time
 from analogio import AnalogIn
 
 potentiometer = AnalogIn(board.A0)
