@@ -83,7 +83,7 @@ potentiometer = AnalogIn(board.A0)
 while True:
     print((potentiometer.value))
     time.sleep(0.25)
-```Python
+```
 Once that was working, I added 2 lines to incorporate motor control and the finished code looked like this:
 
 ``` 
@@ -98,7 +98,7 @@ pwm = pwmio.PWMOut(board.D6)
 while True:
     print((potentiometer.value))
     pwm.duty_cycle = potentiometer.value
-```Python
+```
 
 ### Evidence
 
