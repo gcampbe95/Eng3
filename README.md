@@ -4,7 +4,7 @@
 * [Table of Contents](#TableOfContents)
 * [Ultrasonic_Rainbow](#Ultrasonic_Rainbow)
 * [Motor_Control](#Motor_Control)
-* [Onshape_Practice:_Hanger](#Onshape_Practice:_Hanger)
+* [Onshape_Hanger](#Onshape_Hanger)
 * [Swing_Arm](#Swing_Arm)
 ---
 
@@ -69,7 +69,7 @@ green = (0, 255, 0) # 35
 ## Motor_Control
 
 ### Description & Code Snippets
-This assignment was to control the speed of a motor using input from a potentiometer. It was a fairly simple piece of code (the whileTrue is only 2 lines) and the trickiest parts were was making sure my wiring was correct and realizing that all I needed was pwmio, and not a brand new library. 
+This assignment was to control the speed of a motor using input from a potentiometer. It was a fairly simple piece of code (the whileTrue is only 2 lines) and the trickiest parts were making sure my wiring was correct and realizing that all I needed was pwmio, and not a brand new library. 
 
 I started with printing the potentiometer value like this:
 
@@ -102,22 +102,21 @@ while True:
 
 ### Evidence
 
-![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
+![](image.png)
 
 ### Wiring
-Wiring for this code can be found here (procede with caution): 
+Wiring for this code can be found here (proceed with caution): 
+**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
 
-**https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits**
-
-![](../../Pictures/WIN_20230925_11_13_32_Pro%20-%20Trim.mp4)
+![](../../Pictures/Screenshot%202023-10-05%20083654.png)
 
 ### Reflection
 The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
 
-## Onshape_Practice:_Hanger 
+## Onshape_Hanger 
 
 ### Description 
-In this assignment we modelled a "block hanger" (?) and got more practice modelling parts just from drawings, which will be a necessary skill for the Onshape certification. It was also a needed reminder of best practices for efficient modelling, because speed and accuracy will also be assets on the exam. Ultimately I think the most important thing to remember on this assignment is that taking the time to form good modelling habits now will definitely pay off later: a good foundation can be sped up, but practices that lead to inaccuracies will be much harder to fix. 
+In this assignment we modelled a "block hanger" and got more practice modelling parts just from drawings, which will be a necessary skill for the Onshape certification. It was also a needed reminder of best practices for efficient modelling, because speed and accuracy will also be assets on the exam. Ultimately I think the most important thing to remember on this assignment is that taking the time to form good modelling habits now will definitely pay off later: a good foundation can be sped up, but practices that lead to inaccuracies will be much harder to fix. 
 
 ### Evidence
 
