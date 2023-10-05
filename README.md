@@ -15,7 +15,7 @@ This assignment was to use what we recently learned about neopixels to fade one'
 
 The code for one of the afformentioned color sections looks like this:
 
-``` 
+```Python 
 if (5 < sonar.distance) and (sonar.distance <= 12.5): #names distance range
       r = 255 #setting initial rgb values
       g = 0
@@ -27,7 +27,7 @@ if (5 < sonar.distance) and (sonar.distance <= 12.5): #names distance range
 ```
 Before beginning, it was important that I understood all the components, so I broke the task down into shorter, simpler code functions that only did one thing. This is an example of my ultrasonic sensor "simplecode:"
 
-``` 
+```Python 
 import board
     import time
     import adafruit_hcsr04
@@ -73,7 +73,7 @@ This assignment was to control the speed of a motor using input from a potentiom
 
 I started with printing the potentiometer value like this:
 
-``` 
+```Python
 import board
 import time
 from analogio import AnalogIn
@@ -86,7 +86,7 @@ while True:
 ```
 Once that was working, I added 2 lines to incorporate motor control and the finished code looked like this:
 
-``` 
+```Python
 import board
 import time
 from analogio import AnalogIn
