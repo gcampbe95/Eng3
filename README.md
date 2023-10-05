@@ -108,7 +108,7 @@ while True:
 Wiring for this code can be found here (proceed with caution): 
 **[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
 
-![](../../Pictures/Screenshot%202023-10-05%20083654.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202023-10-05%20083654.png)
 
 ### Reflection
 The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
