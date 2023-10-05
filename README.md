@@ -1,48 +1,12 @@
-# CircuitPython
-This repository will actually serve as an aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+# ENG3_Documentation
+
 ## Table of Contents
 * [Table of Contents](#TableOfContents)
-* [Hello_CircuitPython](#Hello_CircuitPython)
 * [Ultrasonic_Rainbow](#Ultrasonic_Rainbow)
 * [Motor_Control](#Motor_Control)
+* [Onshape_Practice:_Hanger](#Onshape_Practice:_Hanger)
+* [Swing_Arm](#Swing_Arm)
 ---
-
-## Hello_CircuitPython
-
-### Description & Code Snippets
-Write a couple sentences here, describing this assignment, and make sure that you hit these two points:
-* What was the goal of the assignment?
-* How did you accomplish that goal?
-  How you accomplished the goal is NOT a reflection, it is you telling the reader how to do this assignment, in broad strokes.
-
-  Your description is the right place to draw the reader's attention to any important chunks of code. Here's how you make code look like code:
-
-```python
-Code goes here
-
-```
-
-**Lastly, please end this section with a link to your code or file.**  
-
-### Evidence
-Pictures / Gifs of your finished work should go here.  You need to communicate what your thing does.
-For making a GIF, I recommend [ezgif.com](https://www.ezgif.com) Remember you can insert pictures using Markdown or HTML to insert an image.
-
-![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
-
-
-And here is how you should give image credit to someone if you use their work:
-
-Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
-
-
-
-### Wiring
-Make an account with your Google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
-Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
-
-### Reflection
-Don't just tell the reader what went wrong or was challenging!  Describe how you figured it out, share the things that helped you succeed (tutorials, other people's repos, etc.), and then share what you learned from that experience.  **Your underlying goal for the reflection, is to concisely pass on the RIGHT knowledge that will help the reader recreate this assignment better or more easily.  Pass on your wisdom!**
 
 ## Ultrasonic_Rainbow
 
@@ -77,7 +41,8 @@ while True:
     time.sleep(0.1)
 ```
 Once I had all these pieces, I combined them into my full code which can be found here:
-**https://github.com/gcampbe95/Eng3/blob/main/ultrasonic_rainbow.py**  
+
+**[Ultrasonic_Rainbow](https://github.com/gcampbe95/Eng3/blob/main/ultrasonic_rainbow.py)**
 
 ### Evidence
 
@@ -86,7 +51,7 @@ Once I had all these pieces, I combined them into my full code which can be foun
 ### Wiring
 Wiring for this code can be found here: 
 
-**https://www.tinkercad.com/things/8jPgL02bwfb?sharecode=Yq47arHhx7T9tyG5EsO7KpIhFaA4cjIe9BHEPfdqQR8**
+**[Ultrasonic Sensor Wiring](https://www.tinkercad.com/things/8jPgL02bwfb?sharecode=Yq47arHhx7T9tyG5EsO7KpIhFaA4cjIe9BHEPfdqQR8)**
 
 ![](../../Pictures/WIN_20230925_11_13_32_Pro%20-%20Trim.mp4)
 
@@ -118,7 +83,7 @@ potentiometer = AnalogIn(board.A0)
 while True:
     print((potentiometer.value))
     time.sleep(0.25)
-```
+```Python
 Once that was working, I added 2 lines to incorporate motor control and the finished code looked like this:
 
 ``` 
@@ -133,7 +98,7 @@ pwm = pwmio.PWMOut(board.D6)
 while True:
     print((potentiometer.value))
     pwm.duty_cycle = potentiometer.value
-```
+```Python
 
 ### Evidence
 
@@ -147,4 +112,44 @@ Wiring for this code can be found here (procede with caution):
 ![](../../Pictures/WIN_20230925_11_13_32_Pro%20-%20Trim.mp4)
 
 ### Reflection
-The most important parts of this assignment were wiring carefully and not overcomplicating it. It 
+The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
+
+## Onshape_Practice:_Hanger 
+
+### Description 
+In this assignment we modelled a "block hanger" (?) and got more practice modelling parts just from drawings, which will be a necessary skill for the Onshape certification. It was also a needed reminder of best practices for efficient modelling, because speed and accuracy will also be assets on the exam. Ultimately I think the most important thing to remember on this assignment is that taking the time to form good modelling habits now will definitely pay off later: a good foundation can be sped up, but practices that lead to inaccuracies will be much harder to fix. 
+
+### Evidence
+
+![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
+
+### Part Link
+The finished part can be found here: 
+
+**https://cvilleschools.onshape.com/documents/f4db0690df87f7004a8dc5cf/w/95766ec79d0166b3b0bb6b30/e/cfd029d9d43e634cbc7a784f**
+
+### Reflection
+I approached this part by extruding a rectangular prism of the correct dimensions, then carving out the necessary arcs and holes. While this assignment didn't give me much trouble, I definitely learned some strategies for modelling **faster**. For example, this part is symetrical about the center line. I prefer to model parts all at once (accomplishing as much as possible with one sketch) so I used that approach modelling the hanger as well. I did mirror most of the symetrical features, but it would've been quicker and easier to just model one half and mirror that at the end. I also used a 3 point arc and then constrained it to be tangent instead of just using a ...tangent... arc. 
+
+## Swing_Arm 
+
+### Description 
+In this assignment we modelled a part based on 3 drawings, using variables for some dimensions. This is definitely the most difficult CAD part I've been assigned, and it was a fun challenge to practice with. As I mentioned in the henger documentation, my sketches are busy and few, so I started by extruding this:
+
+...then adding the holes on the ends and cutting out/expanding components to the right width. 
+
+My last step was adding the panels on the bottom and side:
+
+...and changing some of my variables to make sure the model was adaptable in the right ways. 
+
+### Evidence
+
+![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
+
+### Part Link
+The finished part can be found here: 
+
+**https://cvilleschools.onshape.com/documents/e16d436a118fe77fed8a7da4/w/a16e9ab0950106cb18ac6077/e/61485a0378d7a82e6cc495f2**
+
+### Reflection
+My approach to this part was mostly sound, though I did make a couple mistakes that I ended up needing to go back and fix. The first was assuming that the overhangs on the bottom and side were based on the 7.5mm fillet radius. I realized later that their height was not given because their tops needed to be tangent to the ring at the part's... axis of rotation(?) and also needed to be parallel to the sections they protruded from. My biggest challenge in modelling this part, however, was interpreting the sketch. I didn't have a reference model that could clarify my questions, so I had to do a little more deduction than I'm used to. For example, I initially didn't include the tangent panel on the bottom, which threw my mass off. 
