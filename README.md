@@ -46,14 +46,13 @@ Once I had all these pieces, I combined them into my full code which can be foun
 
 ### Evidence
 
-![](C:\Users\gcampbe95\Downloads\ezgif-5-0dd6a09949.gif)
+![](https://github.com/gcampbe95/Eng3/blob/main/ultrasonic.gif)
 
 ### Wiring
 Wiring for this code can be found here: 
 
 **[Ultrasonic Sensor Wiring](https://www.tinkercad.com/things/8jPgL02bwfb?sharecode=Yq47arHhx7T9tyG5EsO7KpIhFaA4cjIe9BHEPfdqQR8)**
-
-![](../../Pictures/WIN_20230925_11_13_32_Pro%20-%20Trim.mp4)
+![](https://github.com/gcampbe95/Eng3/blob/main/ultrasonic.png)
 
 ### Reflection
 The easiest way to approach this was to break it into more manageable parts, such as checking the function of my ultrasonic sensor, writing simpler pieces of neopixel code to make sure I understood it before moving on to more advanced functions like gradients, and mapping simple ranges and printing the result. I spent a lot of time on this because I was trying to come up with a solution using variables and adding/subtracting from rgb values incrementally instead of mapping. The solution that ended up working was naming colors and distances at the top to keep my values organized, like this...
@@ -102,7 +101,7 @@ while True:
 
 ### Evidence
 
-![](image.png)
+![]()
 
 ### Wiring
 Wiring for this code can be found here (proceed with caution): 
