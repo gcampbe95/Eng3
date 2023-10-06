@@ -101,7 +101,7 @@ while True:
 
 ### Evidence
 
-![]()
+![](https://github.com/gcampbe95/Eng3/blob/main/motor.gif)
 
 ### Wiring
 Wiring for this code can be found here (proceed with caution): 
