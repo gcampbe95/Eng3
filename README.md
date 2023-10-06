@@ -133,12 +133,14 @@ I approached this part by extruding a rectangular prism of the correct dimension
 
 ### Description 
 In this assignment we modelled a part based on 3 drawings, using variables for some dimensions. This is definitely the most difficult CAD part I've been assigned, and it was a fun challenge to practice with. As I mentioned in the henger documentation, my sketches are busy and few, so I started by extruding this:
-
+![](https://github.com/gcampbe95/Eng3/blob/main/swingarmsketch.png)
 ...then adding the holes on the ends and cutting out/expanding components to the right width and changing some of my variables to make sure the model was adaptable in the right ways. 
-
+![](https://github.com/gcampbe95/Eng3/blob/main/swingarmholes.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/swingarmconfig2.png)
 ### Evidence
 
-![](https://im5.ezgif.com/tmp/ezgif-5-0dd6a09949.gif)
+![](https://github.com/gcampbe95/Eng3/blob/main/swingarmv1.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/swingarmv2.png)
 
 ### Part Link
 The finished part can be found here: 
