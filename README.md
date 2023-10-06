@@ -134,11 +134,7 @@ I approached this part by extruding a rectangular prism of the correct dimension
 ### Description 
 In this assignment we modelled a part based on 3 drawings, using variables for some dimensions. This is definitely the most difficult CAD part I've been assigned, and it was a fun challenge to practice with. As I mentioned in the henger documentation, my sketches are busy and few, so I started by extruding this:
 
-...then adding the holes on the ends and cutting out/expanding components to the right width. 
-
-My last step was adding the panels on the bottom and side:
-
-...and changing some of my variables to make sure the model was adaptable in the right ways. 
+...then adding the holes on the ends and cutting out/expanding components to the right width and changing some of my variables to make sure the model was adaptable in the right ways. 
 
 ### Evidence
 
