@@ -145,7 +145,7 @@ In this assignment we modelled a part based on 3 drawings, using variables for s
 ### Part Link
 The finished part can be found here: 
 
-**https://cvilleschools.onshape.com/documents/e16d436a118fe77fed8a7da4/w/a16e9ab0950106cb18ac6077/e/61485a0378d7a82e6cc495f2**
+**[Motor Control Wiring](https://cvilleschools.onshape.com/documents/e16d436a118fe77fed8a7da4/w/a16e9ab0950106cb18ac6077/e/61485a0378d7a82e6cc495f2)**
 
 ### Reflection
 My approach to this part was mostly sound, though I did make a couple mistakes that I ended up needing to go back and fix. The first was assuming that the overhangs on the bottom and side were based on the 7.5mm fillet radius. I realized later that their height was not given because their tops needed to be tangent to the ring at the part's... axis of rotation(?) and also needed to be parallel to the sections they protruded from. My biggest challenge in modelling this part, however, was interpreting the sketch. I didn't have a reference model that could clarify my questions, so I had to do a little more deduction than I'm used to. For example, I initially didn't include the tangent panel on the bottom, which threw my mass off. 
