@@ -6,6 +6,7 @@
 * [Motor_Control](#Motor_Control)
 * [Onshape_Hanger](#Onshape_Hanger)
 * [Swing_Arm](#Swing_Arm)
+* [2Button_Servo](#2Button_Servo)
 ---
 
 ## Ultrasonic_Rainbow
@@ -150,3 +151,85 @@ The finished part can be found here:
 
 ### Reflection
 My approach to this part was mostly sound, though I did make a couple mistakes that I ended up needing to go back and fix. The first was assuming that the overhangs on the bottom and side were based on the 7.5mm fillet radius. I realized later that their height was not given because their tops needed to be tangent to the ring at the part's... axis of rotation(?) and also needed to be parallel to the sections they protruded from. My biggest challenge in modelling this part, however, was interpreting the sketch. I didn't have a reference model that could clarify my questions, so I had to do a little more deduction than I'm used to. For example, I initially didn't include the tangent panel on the bottom, which threw my mass off. 
+
+## 2Button_Servo
+
+### Description & Code Snippets
+In this assignment the task was to control a servo with two buttons, where one moved the servo to the right and the other moved it to the left.  
+
+I started with writing a simple function that recognizes when a button is pressed. It looks like this:
+
+```Python
+import board
+import time
+import pwmio
+from digitalio import DigitalInOut, Direction, Pull 
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50) #sets up pwm
+
+btn1 = DigitalInOut(board.D6) #b1 pin
+btn1.direction = Direction.INPUT 
+btn1.pull = Pull.DOWN #sets up pulldown for buttons
+
+while True:
+    if btn1.value: # while the button is pressed
+        print ("BTN is down")
+    else:
+        print("BTN is up")
+        pass
+```
+That part was honestly a little tricky, because it was a new way of doing pwm and I needed a refresher on pulldown, but I only needed to make a few adjustments to incorporate servo control. I started by declaring a variable, curangle, that would correspond to the servo's angle and be modified by the button. The first issue Ihad with this was that with lines that look like this...
+```Python
+curangle = curangle + 5
+```
+... angles can exceed 180 and get stuck. To avoid this, I added:
+```Python
+if curangle <= 174: # prevents the angle from getting above 180
+```
+... and the finished code looked like this:
+```Python
+import board
+import time
+import pwmio
+from adafruit_motor import servo 
+from digitalio import DigitalInOut, Direction, Pull 
+pwm = pwmio.PWMOut(board.A2, duty_cycle=2 ** 15, frequency=50) #sets up pwm
+my_servo = servo.Servo(pwm)
+curangle = 90 #the while True asks the servo to move right or left of this angle
+
+btn1 = DigitalInOut(board.D6) #b1 pin
+btn1.direction = Direction.INPUT 
+btn1.pull = Pull.DOWN #sets up pulldown for buttons
+
+btn2 = DigitalInOut(board.D5) #same as b1
+btn2.direction = Direction.INPUT
+btn2.pull = Pull.DOWN
+
+while True:
+    if btn1.value: # while the button is pressed
+        if curangle <= 174: # prevents the angle from getting above 180 
+            curangle = curangle + 5 
+            my_servo.angle = curangle
+            time.sleep(0.05)
+    elif btn2.value:
+        if curangle >= 6: # prevents the angle from getting below 0 
+            curangle = curangle - 5
+            my_servo.angle = curangle
+            time.sleep(0.05)
+    else:
+        print("BTN is up")
+        pass
+
+```
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/ezgif-1-db40b96bb7%20(1).gif)
+
+### Wiring
+Wiring for this code can be found here (proceed with caution): 
+**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+
+![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
+
+### Reflection
+The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
