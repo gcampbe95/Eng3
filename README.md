@@ -226,10 +226,10 @@ while True:
 ![](https://github.com/gcampbe95/Eng3/blob/main/ezgif-1-db40b96bb7%20(1).gif)
 
 ### Wiring
-Wiring for this code can be found here (proceed with caution): 
-**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+Wiring for this code can be found here: 
+**[2BUtton Wiring](https://www.tinkercad.com/things/5sdIopFZdMf)**
 
-![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202023-10-24%20123652.png)
 
 ### Reflection
-The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
+Before this assignment, I was still pretty unfamiliar with pulldown and needed some practice with using pwm in CircuitPython. For this, it was helpful to break it down into just the button and just the servo. 
