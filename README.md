@@ -232,4 +232,4 @@ Wiring for this code can be found here:
 ![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202023-10-24%20123652.png)
 
 ### Reflection
-Before this assignment, I was still pretty unfamiliar with pulldown and needed some practice with using pwm in CircuitPython. For this, it was helpful to break it down into just the button and just the servo. 
+Before this assignment, I was still pretty unfamiliar with pulldown and needed some practice with using pwm in CircuitPython. For this, it was helpful to break it down into just the button and just the servo. Where the button is concerned, Alexis helped me with pulldown and I now feel confident integrating it into other assignments, and I also know that having the isolated code will be useful in the future. On the servo side, my initial code had it getting stuck when the angle got above 180 or fell below 0, so I added "if" statements that prevented this. 
