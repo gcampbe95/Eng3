@@ -227,7 +227,7 @@ while True:
 
 ### Wiring
 Wiring for this code can be found here: 
-**[2BUtton Wiring](https://www.tinkercad.com/things/5sdIopFZdMf)**
+**[2Button Wiring](https://www.tinkercad.com/things/5sdIopFZdMf)**
 
 ![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202023-10-24%20123652.png)
 
