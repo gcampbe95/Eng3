@@ -7,6 +7,7 @@
 * [Onshape_Hanger](#Onshape_Hanger)
 * [Swing_Arm](#Swing_Arm)
 * [2Button_Servo](#2Button_Servo)
+* [VBlock](#VBlock)
 ---
 
 ## Ultrasonic_Rainbow
@@ -233,3 +234,24 @@ Wiring for this code can be found here:
 
 ### Reflection
 Before this assignment, I was still pretty unfamiliar with pulldown and needed some practice with using pwm in CircuitPython. For this, it was helpful to break it down into just the button and just the servo. Where the button is concerned, Alexis helped me with pulldown and I now feel confident integrating it into other assignments, and I also know that having the isolated code will be useful in the future. On the servo side, my initial code had it getting stuck when the angle got above 180 or fell below 0, so I added "if" statements that prevented this. 
+
+## VBlock 
+
+### Description 
+In this assignment we modelled a "V block" and then modified it based on a series of drawings. It was deceptively tricky, because I initially sacrificed a lot of accuracy for speed, which ended up costing me time. The most efficient way to approach this was to model 1/4 of the block and then use a part mirror to reflect it across the front and right planes. I usually use sketch mirrors, but apparently they're bad, so I avoided them for this model and it was definitely easier to make changes. The most important part here was paying close attention during the first question and taking the little bit of extra time to check each subsequent drawing to make sure every change was included.
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/vblock.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/vblock2.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/vblock3.png)
+
+
+### Part Link
+The finished part can be found here: 
+
+**[Block Hanger](https://cvilleschools.onshape.com/documents/f4db0690df87f7004a8dc5cf/w/95766ec79d0166b3b0bb6b30/e/cfd029d9d43e634cbc7a784f)**
+
+### Reflection
+I approached this part by extruding a rectangular prism of the correct dimensions, then carving out the necessary arcs and holes. While this assignment didn't give me much trouble, I definitely learned some strategies for modelling **faster**. For example, this part is symetrical about the center line. I prefer to model parts all at once (accomplishing as much as possible with one sketch) so I used that approach modelling the hanger as well. I did mirror most of the symetrical features, but it would've been quicker and easier to just model one half and mirror that at the end. I also used a 3 point arc and then constrained it to be tangent instead of just using a ...tangent... arc. 
+
