@@ -250,8 +250,8 @@ In this assignment we modelled a "V block" and then modified it based on a serie
 ### Part Link
 The finished part can be found here: 
 
-**[Block Hanger](https://cvilleschools.onshape.com/documents/f4db0690df87f7004a8dc5cf/w/95766ec79d0166b3b0bb6b30/e/cfd029d9d43e634cbc7a784f)**
+**[V Block](https://cvilleschools.onshape.com/documents/883d46fc4e0ec8cb44f43a23/w/65ace9810c27842f6c57f290/e/85d305785d1342d48913fa3d)**
 
 ### Reflection
-I approached this part by extruding a rectangular prism of the correct dimensions, then carving out the necessary arcs and holes. While this assignment didn't give me much trouble, I definitely learned some strategies for modelling **faster**. For example, this part is symetrical about the center line. I prefer to model parts all at once (accomplishing as much as possible with one sketch) so I used that approach modelling the hanger as well. I did mirror most of the symetrical features, but it would've been quicker and easier to just model one half and mirror that at the end. I also used a 3 point arc and then constrained it to be tangent instead of just using a ...tangent... arc. 
+There were a couple places in this assignment where I modelled one question, made it a version, moved on to the next question, and realized a bunch of updates later that I had something wrong in question 1 that I had missed because I didn't pay attention. Modelling the V Block could've been very simple if I had approached it as efficiently as possible I did in some ways (modelling 1/4 of the block and mirroring, using offset instead of dimensioning the outer lip edge by edge) but didn't in others (rushing through the first model instead of spending time getting a solid fundation so I could fly throught the modifications). Overall, I need to work on paying a little more attention in the instructions for a part's original version.   
 
