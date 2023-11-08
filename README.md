@@ -255,3 +255,22 @@ The finished part can be found here:
 ### Reflection
 There were a couple places in this assignment where I modelled one question, made it a version, moved on to the next question, and realized a bunch of updates later that I had something wrong in question 1 that I had missed because I didn't pay attention. Modelling the V Block could've been very simple if I had approached it as efficiently as possible. I did this in some ways (modelling 1/4 of the block and mirroring, using offset instead of dimensioning the outer lip edge by edge) but didn't in others (rushing through the first model instead of spending time getting a solid fundation so I could fly throught the modifications). Overall, I need to work on paying a little more attention in the instructions for a part's original version.   
 
+## Multipart_Practice
+
+### Description 
+In this assignment we modelled a "V block" and then modified it based on a series of drawings. It was deceptively tricky, because I initially sacrificed a lot of accuracy for speed, which ended up costing me time. The most efficient way to approach this was to model 1/4 of the block and then use a part mirror to reflect it across the front and right planes. I usually use sketch mirrors, but apparently they're bad, so I avoided them for this model and it was definitely easier to make changes. The most important part here was paying close attention during the first question and taking the little bit of extra time to check each subsequent drawing to make sure every change was included.
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/strawberry.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/strawberry2.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/strawberry3.png)
+
+
+### Part Link
+The finished part can be found here: 
+
+**[V Block](https://cvilleschools.onshape.com/documents/883d46fc4e0ec8cb44f43a23/w/65ace9810c27842f6c57f290/e/85d305785d1342d48913fa3d)**
+
+### Reflection
+There were a couple places in this assignment where I modelled one question, made it a version, moved on to the next question, and realized a bunch of updates later that I had something wrong in question 1 that I had missed because I didn't pay attention. Modelling the V Block could've been very simple if I had approached it as efficiently as possible. I did this in some ways (modelling 1/4 of the block and mirroring, using offset instead of dimensioning the outer lip edge by edge) but didn't in others (rushing through the first model instead of spending time getting a solid fundation so I could fly throught the modifications). Overall, I need to work on paying a little more attention in the instructions for a part's original version.   
