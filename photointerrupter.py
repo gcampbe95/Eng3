@@ -10,4 +10,5 @@ photoint.pull = digitalio.Pull.UP
 photoint_state = None
 
 while True:
-    
+    if not photoint.value and photoint_state is None:
+        photoint_state = "interrupted"
