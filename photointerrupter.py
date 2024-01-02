@@ -9,4 +9,5 @@ photoint.direction = digitalio.Direction.INPUT
 photoint.pull = digitalio.Pull.UP
 photoint_state = None
 
-
+while True:
+    
