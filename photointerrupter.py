@@ -27,6 +27,7 @@ while True:
     if (now + 4) < time.monotonic():
         lcd.set_cursor_pos(1,0)
         lcd.print(str(counter))
+        now = time.monotonic()
        
     
 
