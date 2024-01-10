@@ -8,6 +8,8 @@
 * [Swing_Arm](#Swing_Arm)
 * [2Button_Servo](#2Button_Servo)
 * [VBlock](#VBlock)
+* [Multipart Cylinder](#Multipart_Practice)
+* [Photointerrupter LCD](#Photointerrupter_LCD)
 ---
 
 ## Ultrasonic_Rainbow
@@ -274,3 +276,114 @@ The finished part can be found here:
 
 ### Reflection
 In my initial run-through of this part, I modelled each component in the studio, then transferred them all to an assembly, which was a bad idea. Because I was working with an eye toward fixing it all in the assembly, within the studio a lot of my distances and relationships between parts were inaccurate to the design intent, even if the parts themselves were correct. This saved a little time in the moment (I could create new parts on the surfaces of other parts without taking the extra time to make them actually fit together) but caused problems later on. The easiest way to model the bolts, for example, is to sketch a hole on the surface of one of the caps, use "up to face" to get it to the right height, then extrude both ends once more by whatever distance they're supposed to overhang. This way, even if the size of the cylinder changes, the bolts will be the right height, no variables or human-error prone modifications necessary. This only works if the studio's relationships are accurate. The way *I* did it was considerably more complicated, messy, and time consuming, and I definitely learned my lesson about relying too heavily on assemblies. 
+
+## Photointerrupter_LCD
+
+### Description & Code Snippets
+This assignment was to print the number of times a photointerrupter had been interrupted to an LCD screen every 4 seconds. It was essentially made up of 3 parts: sensing the photointerrupter, printing to an LCD screen, and monitoring how much time had passed. 
+
+To set up the photointerrupter, I needed a variable called "counter" that would increase every time an interrupt was sensed. after the setup, which looked like this:
+
+```Python
+import board
+import time
+import digitalio
+counter = 0
+
+photoint = digitalio.DigitalInOut(board.D6)
+photoint.direction = digitalio.Direction.INPUT
+photoint.pull = digitalio.Pull.UP
+photoint_state = None
+```
+... my goal was to get the number of interrupts to print to the serial monitor. I started with 2 "if" statements that looked like this:
+
+```Python
+    if not photoint.value and photoint_state is None:
+        photoint_state = "interrupted"
+    if photoint.value and photoint_state is None:
+        counter += 1
+        print(counter)
+```
+... but with this code, the counter increased continuously while the photointerrupter was interrupted. To get it to count only once per interrupt, Alexis helped me debounce it. The final "if" statements looked like this:
+
+```Python
+    if not photoint.value and photoint_state == "interrupted":
+        photoint_state = None
+    if photoint.value and photoint_state is None:
+        photoint_state = "interrupted"  
+        counter += 1
+        print(counter)
+```
+Next, I needed to print to an LCD. After I had scanned for my screen's address using **[this code](https://github.com/gcampbe95/Eng3/blob/main/lcdscan.py)**, the necessary setup and code was pretty easy to transfer from other assignments. It looked like this:
+
+```Python
+import board
+import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+counter = 0
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+
+photoint = digitalio.DigitalInOut(board.D6)
+photoint.direction = digitalio.Direction.INPUT
+photoint.pull = digitalio.Pull.UP
+photoint_state = None
+
+while True:
+    lcd.set_cursor_pos(0,0)
+    lcd.print("interrupts:  ")
+    if not photoint.value and photoint_state == "interrupted":
+        photoint_state = None
+    if photoint.value and photoint_state is None:
+        photoint_state = "interrupted"  
+        counter += 1
+        print(counter)
+        lcd.set_cursor_pos(1,0)
+        lcd.print(str(counter))
+```
+One thing to note here is that just writing "lcd.print(counter)" in line 24 will yield an error message about the variable not being iterable, but adding "str()" before the variable fixes it. The final piece to this assignment was to restrict the update to every 4 seconds, which I did using time monotonic:
+
+```Python
+import board
+import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+counter = 0
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+now = time.monotonic()
+
+photoint = digitalio.DigitalInOut(board.D6)
+photoint.direction = digitalio.Direction.INPUT
+photoint.pull = digitalio.Pull.UP
+photoint_state = None
+
+while True:
+    lcd.set_cursor_pos(0,0)
+    lcd.print("interrupts:  ")
+    if not photoint.value and photoint_state == "interrupted":
+        photoint_state = None
+    if photoint.value and photoint_state is None:
+        photoint_state = "interrupted"  
+        counter += 1
+        print(counter)
+    if (now + 4) < time.monotonic():
+        lcd.set_cursor_pos(1,0)
+        lcd.print(str(counter))
+        now = time.monotonic()
+```
+The full code can also be found **[here](https://github.com/gcampbe95/Eng3/blob/main/photointerrupter.py)**
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/motor.gif)
+
+### Wiring
+Wiring for this code can be found here (proceed with caution): 
+**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+
+![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
+
+### Reflection
+The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 

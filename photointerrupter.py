@@ -12,9 +12,6 @@ photoint.direction = digitalio.Direction.INPUT
 photoint.pull = digitalio.Pull.UP
 photoint_state = None
 
-lcd.set_cursor_pos(0,0)
-lcd.print("interrupts:")
-
 while True:
     lcd.set_cursor_pos(0,0)
     lcd.print("interrupts:  ")
@@ -28,6 +25,6 @@ while True:
         lcd.set_cursor_pos(1,0)
         lcd.print(str(counter))
         now = time.monotonic()
-       
+      
     
 
