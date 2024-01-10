@@ -262,8 +262,8 @@ In this assignment we practiced using multi-part studios
 
 ### Evidence
 
-![](https://github.com/gcampbe95/Eng3/blob/main/strawberry.png)
-![](https://github.com/gcampbe95/Eng3/blob/main/strawberry2.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/strawberrynew1.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/strawberrynew2.png)
 ![](https://github.com/gcampbe95/Eng3/blob/main/strawberry3.png)
 
 
