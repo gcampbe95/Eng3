@@ -382,10 +382,10 @@ The full code can also be found **[here](https://github.com/gcampbe95/Eng3/blob/
 ****please note that the gif is set at 2x speed so the interval between  updates is only 2 seconds**** 
 
 ### Wiring
-Wiring for this code can be found here (proceed with caution): 
-**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+Wiring for this code can be found here: 
+**[Photointerrupter Wiring](https://www.tinkercad.com/things/iJt6GO2TqtK-terrific-bruticus-jaiks/editel?returnTo=%2Fdashboard)**
 
-![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
 
 ### Reflection
 The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
