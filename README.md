@@ -282,7 +282,7 @@ In my initial run-through of this part, I modelled each component in the studio,
 ### Description & Code Snippets
 This assignment was to print the number of times a photointerrupter had been interrupted to an LCD screen every 4 seconds. It was essentially made up of 3 parts: sensing the photointerrupter, printing to an LCD screen, and monitoring how much time had passed. 
 
-To set up the photointerrupter, I needed a variable called "counter" that would increase every time an interrupt was sensed. after the setup, which looked like this:
+To set up the photointerrupter, I needed a variable called "counter" that would increase every time an interrupt was sensed. After the setup, it looked like this:
 
 ```Python
 import board
@@ -377,7 +377,9 @@ The full code can also be found **[here](https://github.com/gcampbe95/Eng3/blob/
 
 ### Evidence
 
-![](https://github.com/gcampbe95/Eng3/blob/main/motor.gif)
+![](https://github.com/gcampbe95/Eng3/blob/main/interrupter.gif)
+
+****please note that the gif is set at 2x speed so the interval between  updates is only 2 seconds**** 
 
 ### Wiring
 Wiring for this code can be found here (proceed with caution): 
