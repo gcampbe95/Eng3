@@ -388,4 +388,4 @@ Wiring for this code can be found here:
 ![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
 
 ### Reflection
-My main takeaway from this assignment was debouncing. While it's sometimes useful for a variable to increase continuously while a condition is met, more often I'll need my counter to count the number of times that condition has been met, and I'm glad I spent the time to understand debouncing so I can employ it with less difficulty in the future. 
+My main takeaway from this assignment was debouncing. While it's sometimes useful for a variable to increase continuously while a condition is met, more often I'll need my counter to count the number of times that condition has been met, and I'm glad I spent the time to understand debouncing so I can employ it with less difficulty in the future.  
