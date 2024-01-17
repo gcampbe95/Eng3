@@ -388,4 +388,4 @@ Wiring for this code can be found here:
 ![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
 
 ### Reflection
-The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
+My main takeaway from this assignment was debouncing. While it's sometimes useful for a variable to increase continuously while a condition is met, more often I'll need my counter to count the number of times that condition has been met, and I'm glad I spent the time to understand debouncing so I can employ it with less difficulty in the future. 
