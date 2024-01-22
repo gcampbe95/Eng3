@@ -22,5 +22,9 @@ motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=
 
 while True:
     for step in range(STEPS):
-        motor.onestep(style=stepper.DOUBLE)
+        motor.onestep()
         time.sleep(DELAY)
+    for step in range(STEPS):
+        motor.onestep(direction=stepper.BACKWARD)
+        time.sleep(DELAY)
+        print("stepped!")
