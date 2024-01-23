@@ -1,0 +1,26 @@
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper
+
+DELAY = 0.01
+STEPS = 100
+
+async def catch_pin_transitions(pin):
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed:
+                    print("pressed")
+                elif event.released:
+                    print("released")
+            await asyncio.sleep(0)
+
+async def main():
+    interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2))
+    await asyncio.gather(interrupt_task)
+
+asyncio.run(main())
