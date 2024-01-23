@@ -469,76 +469,92 @@ while True:
         time.sleep(DELAY)
         print("stepped!")   
 ```
-Next, I needed to print to an LCD. After I had scanned for my screen's address using **[this code](https://github.com/gcampbe95/Eng3/blob/main/lcdscan.py)**, the necessary setup and code was pretty easy to transfer from other assignments. It looked like this:
+Next, I needed to get my limit switch running. To streamline it, I defined a couple of tasks that I then ran as a function at the end. My final limit switch code looked like this:
 
 ```Python
+import asyncio
 import board
+import keypad
 import time
 import digitalio
-from lcd.lcd import LCD
-from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
-counter = 0
-lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+from adafruit_motor import stepper
 
-photoint = digitalio.DigitalInOut(board.D6)
-photoint.direction = digitalio.Direction.INPUT
-photoint.pull = digitalio.Pull.UP
-photoint_state = None
+DELAY = 0.01
+STEPS = 100
 
-while True:
-    lcd.set_cursor_pos(0,0)
-    lcd.print("interrupts:  ")
-    if not photoint.value and photoint_state == "interrupted":
-        photoint_state = None
-    if photoint.value and photoint_state is None:
-        photoint_state = "interrupted"  
-        counter += 1
-        print(counter)
-        lcd.set_cursor_pos(1,0)
-        lcd.print(str(counter))
+async def catch_pin_transitions(pin):
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed:
+                    print("pressed")
+                elif event.released:
+                    print("released")
+            await asyncio.sleep(0)
+
+async def main():
+    interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2))
+    await asyncio.gather(interrupt_task)
+
+asyncio.run(main())
 ```
-One thing to note here is that just writing "lcd.print(counter)" in line 24 will yield an error message about the variable not being iterable, but adding "str()" before the variable fixes it. The final piece to this assignment was to restrict the update to every 4 seconds, which I did using time monotonic:
+Then, it was time to combine them. I used my limit switch code as a template, and inserted my motor code into the "if pressed" statement. My final code can be found **[here](https://github.com/gcampbe95/Eng3/blob/main/stepper.py)**
 
 ```Python
+import asyncio
 import board
+import keypad
 import time
 import digitalio
-from lcd.lcd import LCD
-from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
-counter = 0
-lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
-now = time.monotonic()
+from adafruit_motor import stepper
 
-photoint = digitalio.DigitalInOut(board.D6)
-photoint.direction = digitalio.Direction.INPUT
-photoint.pull = digitalio.Pull.UP
-photoint_state = None
+DELAY = 0.01
+STEPS = 100
 
-while True:
-    lcd.set_cursor_pos(0,0)
-    lcd.print("interrupts:  ")
-    if not photoint.value and photoint_state == "interrupted":
-        photoint_state = None
-    if photoint.value and photoint_state is None:
-        photoint_state = "interrupted"  
-        counter += 1
-        print(counter)
-    if (now + 4) < time.monotonic():
-        lcd.set_cursor_pos(1,0)
-        lcd.print(str(counter))
-        now = time.monotonic()
+coils = (
+    digitalio.DigitalInOut(board.D9), #A1
+    digitalio.DigitalInOut(board.D10), #A2
+    digitalio.DigitalInOut(board.D11), #B1
+    digitalio.DigitalInOut(board.D12), #B2
+)
+
+for coil in coils:
+    coil.direction = digitalio.Direction.OUTPUT
+
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+
+async def catch_pin_transitions(pin):
+    with keypad.Keys((pin,), value_when_pressed=False) as keys:
+        while True:
+            event = keys.events.get()
+            if event:
+                if event.pressed:
+                    for step in range(STEPS):
+                        motor.onestep()
+                        time.sleep(DELAY)
+                    for step in range(STEPS):
+                        motor.onestep(direction=stepper.BACKWARD)
+                        time.sleep(DELAY)
+                    print("pressed")
+                elif event.released:
+                    print("released")
+            await asyncio.sleep(0)
+
+async def main():
+    interrupt_task = asyncio.create_task(catch_pin_transitions(board.D2))
+    await asyncio.gather(interrupt_task)
+
+asyncio.run(main())
 ```
-The full code can also be found **[here](https://github.com/gcampbe95/Eng3/blob/main/photointerrupter.py)**
 
 ### Evidence
 
-![](https://github.com/gcampbe95/Eng3/blob/main/interrupter.gif)
-
-****please note that the gif is set at 2x speed so the interval between  updates is only 2 seconds**** 
+![](https://github.com/gcampbe95/Eng3/blob/main/stepper.gif)
 
 ### Wiring
 Wiring for this code can be found here: 
-**[Photointerrupter Wiring](https://www.tinkercad.com/things/iJt6GO2TqtK-terrific-bruticus-jaiks/editel?returnTo=%2Fdashboard)**
+**[Stepper Wiring](https://www.tinkercad.com/things/iJt6GO2TqtK-terrific-bruticus-jaiks/editel?returnTo=%2Fdashboard)**
 
 ![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
 
