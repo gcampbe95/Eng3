@@ -389,3 +389,158 @@ Wiring for this code can be found here:
 
 ### Reflection
 My main takeaway from this assignment was debouncing. While it's sometimes useful for a variable to increase continuously while a condition is met, more often I'll need my counter to count the number of times that condition has been met, and I'm glad I spent the time to understand debouncing so I can employ it with less difficulty in the future. I also used time monotonic for what I believe was the first time, and it'll be useful in the future for when I need time-dependent features do do something other than "sleep".
+
+## Stepper_Motor
+
+### Description & Code Snippets
+Here, the assignment was to code a stepper motor to press a limit switch whose activation prompted the motor to press the switch again, producing an endless cycle (provided the switch remained in position). 
+
+For me, the easiest way to approach this was to break the assignment into two parts: the code for the stepper motor and the code for the limit switch. To do this, I returned to my "simplecode" process, where I wrote rudimentary, standalone functions for each element and combined them in the final code. 
+
+I started with running the motor, which was pretty simple once I understood all the new components. After importing the **[necessary libraries](https://drive.google.com/file/d/1I4mLA3seWHbm1db3O87ket8pc8Qr9-0w/view)** and naming my variables (DELAY = 0.1, and STEPS = 100), I had a few extra pieces to add. My setup looked like this:
+
+```Python
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper
+
+DELAY = 0.01
+STEPS = 100
+
+coils = (
+    digitalio.DigitalInOut(board.D9), #A1
+    digitalio.DigitalInOut(board.D10), #A2
+    digitalio.DigitalInOut(board.D11), #B1
+    digitalio.DigitalInOut(board.D12), #B2
+)
+
+for coil in coils:
+    coil.direction = digitalio.Direction.OUTPUT
+
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+```
+The coils are how the motor moves in such precise steps; each time they're powered on and off, the mechanism slightly realigns itself, making incremental motion possible. Once setup is complete, it's easy to manipulate the motor's direction.   
+
+this moves it forward:
+```Python
+for step in range(STEPS):
+        motor.onestep()
+        time.sleep(DELAY)
+```
+this moves it in the opposite direction:
+```Python
+for step in range(STEPS):
+        motor.onestep(direction=stepper.BACKWARD)
+        time.sleep(DELAY)  
+```
+My final simplecode looked like this:
+```Python
+import asyncio
+import board
+import keypad
+import time
+import digitalio
+from adafruit_motor import stepper
+
+DELAY = 0.01
+STEPS = 100
+
+coils = (
+    digitalio.DigitalInOut(board.D9), #A1
+    digitalio.DigitalInOut(board.D10), #A2
+    digitalio.DigitalInOut(board.D11), #B1
+    digitalio.DigitalInOut(board.D12), #B2
+)
+
+for coil in coils:
+    coil.direction = digitalio.Direction.OUTPUT
+
+motor = stepper.StepperMotor(coils[0], coils[1], coils[2], coils[3], microsteps=None)
+
+while True:
+    for step in range(STEPS):
+        motor.onestep()
+        time.sleep(DELAY)
+    for step in range(STEPS):
+        motor.onestep(direction=stepper.BACKWARD)
+        time.sleep(DELAY)
+        print("stepped!")   
+```
+Next, I needed to print to an LCD. After I had scanned for my screen's address using **[this code](https://github.com/gcampbe95/Eng3/blob/main/lcdscan.py)**, the necessary setup and code was pretty easy to transfer from other assignments. It looked like this:
+
+```Python
+import board
+import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+counter = 0
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+
+photoint = digitalio.DigitalInOut(board.D6)
+photoint.direction = digitalio.Direction.INPUT
+photoint.pull = digitalio.Pull.UP
+photoint_state = None
+
+while True:
+    lcd.set_cursor_pos(0,0)
+    lcd.print("interrupts:  ")
+    if not photoint.value and photoint_state == "interrupted":
+        photoint_state = None
+    if photoint.value and photoint_state is None:
+        photoint_state = "interrupted"  
+        counter += 1
+        print(counter)
+        lcd.set_cursor_pos(1,0)
+        lcd.print(str(counter))
+```
+One thing to note here is that just writing "lcd.print(counter)" in line 24 will yield an error message about the variable not being iterable, but adding "str()" before the variable fixes it. The final piece to this assignment was to restrict the update to every 4 seconds, which I did using time monotonic:
+
+```Python
+import board
+import time
+import digitalio
+from lcd.lcd import LCD
+from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+counter = 0
+lcd = LCD(I2CPCF8574Interface(board.I2C(), 0x27), num_rows=2, num_cols=16)
+now = time.monotonic()
+
+photoint = digitalio.DigitalInOut(board.D6)
+photoint.direction = digitalio.Direction.INPUT
+photoint.pull = digitalio.Pull.UP
+photoint_state = None
+
+while True:
+    lcd.set_cursor_pos(0,0)
+    lcd.print("interrupts:  ")
+    if not photoint.value and photoint_state == "interrupted":
+        photoint_state = None
+    if photoint.value and photoint_state is None:
+        photoint_state = "interrupted"  
+        counter += 1
+        print(counter)
+    if (now + 4) < time.monotonic():
+        lcd.set_cursor_pos(1,0)
+        lcd.print(str(counter))
+        now = time.monotonic()
+```
+The full code can also be found **[here](https://github.com/gcampbe95/Eng3/blob/main/photointerrupter.py)**
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/interrupter.gif)
+
+****please note that the gif is set at 2x speed so the interval between  updates is only 2 seconds**** 
+
+### Wiring
+Wiring for this code can be found here: 
+**[Photointerrupter Wiring](https://www.tinkercad.com/things/iJt6GO2TqtK-terrific-bruticus-jaiks/editel?returnTo=%2Fdashboard)**
+
+![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
+
+### Reflection
+My main takeaway from this assignment was debouncing. While it's sometimes useful for a variable to increase continuously while a condition is met, more often I'll need my counter to count the number of times that condition has been met, and I'm glad I spent the time to understand debouncing so I can employ it with less difficulty in the future. I also used time monotonic for what I believe was the first time, and it'll be useful in the future for when I need time-dependent features do do something other than "sleep".
