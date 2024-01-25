@@ -10,6 +10,7 @@
 * [VBlock](#VBlock)
 * [Multipart Cylinder](#Multipart_Practice)
 * [Photointerrupter LCD](#Photointerrupter_LCD)
+* [Stepper Motor](#Stepper_Motor)
 ---
 
 ## Ultrasonic_Rainbow
