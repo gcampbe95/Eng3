@@ -554,7 +554,7 @@ asyncio.run(main())
 
 ### Wiring
 Wiring for this code can be found here: 
-**[Stepper Wiring](https://www.tinkercad.com/things/iJt6GO2TqtK-terrific-bruticus-jaiks/editel?returnTo=%2Fdashboard)**
+**[Stepper Wiring](https://www.tinkercad.com/things/7CAu1gYD9Fa-bodacious-elzing-jofo/editel?returnTo=%2Fdashboard)**
 
 ![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
 
