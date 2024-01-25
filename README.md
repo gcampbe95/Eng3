@@ -556,7 +556,7 @@ asyncio.run(main())
 Wiring for this code can be found here: 
 **[Stepper Wiring](https://www.tinkercad.com/things/7CAu1gYD9Fa-bodacious-elzing-jofo/editel?returnTo=%2Fdashboard)**
 
-![](https://github.com/gcampbe95/Eng3/blob/main/photowire.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202024-01-25%20111216.png)
 
 ### Reflection
-My main takeaway from this assignment was debouncing. While it's sometimes useful for a variable to increase continuously while a condition is met, more often I'll need my counter to count the number of times that condition has been met, and I'm glad I spent the time to understand debouncing so I can employ it with less difficulty in the future. I also used time monotonic for what I believe was the first time, and it'll be useful in the future for when I need time-dependent features do do something other than "sleep".
+
