@@ -123,8 +123,8 @@ In this assignment we modelled a "block hanger" and got more practice modelling 
 
 ### Evidence
 
-![](https://github.com/gcampbe95/Eng3/blob/main/Part%20Studio%201%20Copy%201%20(2).png)
-![](https://github.com/gcampbe95/Eng3/blob/main/Part%20Studio%201%20Copy%201%20(3).png)
+![](https://github.com/gcampbe95/Eng3/blob/main/biscotti.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/biscotti2.png)
 
 ### Part Link
 The finished part can be found here: 
