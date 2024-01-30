@@ -1,0 +1,21 @@
+import board
+import neopixel
+import digitalio
+
+ir_sensor = digitalio.DigitalInOut(board.D2)
+ir_sensor.direction = digitalio.Direction.INPUT
+ir_sensor.pull = digitalio.Pull.UP
+ir_state = None
+
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+
+while True:
+    if not ir_sensor.value and ir_state is None:
+        print("LOW")
+        led[0] = (255, 0, 0)
+        ir_state = "state!"
+    if ir_sensor.value and ir_state == "state!":
+        print("HIGH")
+        led[0] = (0, 255, 0)
+        ir_state = None
