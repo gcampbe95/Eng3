@@ -560,9 +560,10 @@ Wiring for this code can be found here:
 ![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202024-01-25%20111216.png)
 
 ### Reflection
+This assignment provided a needed reminder of programming
 
 ## IR_Sensor
-
+ 
 ### Description & Code Snippets
 This assignment was to change the color of our board's neopixel from green to red when it sensed a object nearby. 
 
