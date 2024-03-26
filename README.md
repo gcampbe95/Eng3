@@ -561,3 +561,52 @@ Wiring for this code can be found here:
 
 ### Reflection
 
+## IR_Sensor
+
+### Description & Code Snippets
+This assignment was to change the color of our board's neopixel from green to red when it sensed a object nearby. 
+
+Above the while True, I needed to set up my neopixel and my ir_sensor variable. It looked like this:
+```Python
+import board
+import neopixel
+import digitalio
+
+ir_sensor = digitalio.DigitalInOut(board.D2)
+ir_sensor.direction = digitalio.Direction.INPUT
+ir_sensor.pull = digitalio.Pull.UP
+ir_state = None
+
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+```
+Once that was done, I started with pseudocode:
+
+```Python
+while True:
+    # if the IR sensor sees an object:
+        # print "LOW"
+        # set the neopixel to red
+    # if the sensor doesn't see an object:
+        # print "HIGH"
+        # set the neopixel to green
+```
+To determine whether the sensor saw an object, I used a etc etc
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/motor.gif)
+
+### Wiring
+Wiring for this code can be found here (proceed with caution): 
+**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+
+![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
+![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202024-01-25%20111216.png)
+
+
+### Reflection
+The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
+
+
+
