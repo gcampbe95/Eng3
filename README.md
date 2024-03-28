@@ -11,6 +11,8 @@
 * [Multipart Cylinder](#Multipart_Practice)
 * [Photointerrupter LCD](#Photointerrupter_LCD)
 * [Stepper Motor](#Stepper_Motor)
+* [IR Sensor](#IR_Sensor)
+* [Robot Claw](#Robot_Claw)
 ---
 
 ## Ultrasonic_Rainbow
@@ -592,22 +594,22 @@ while True:
         # print "HIGH"
         # set the neopixel to green
 ```
-To determine whether the sensor saw an object, I used a etc etc
+To determine whether the sensor saw an object, I used...
 
 ### Evidence
 
-![](https://github.com/gcampbe95/Eng3/blob/main/motor.gif)
-
 ### Wiring
-Wiring for this code can be found here (proceed with caution): 
-**[Motor Control Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+Wiring for this code can be found here: 
+**[IR Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
 
 ![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
-![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202024-01-25%20111216.png)
-
 
 ### Reflection
-The most important parts of this assignment were wiring carefully and not overcomplicating it. In my initial iteration of this code, I included a map function that ended up being unnecessary. The more concise and effective solution was a simple "pwm.duty_cycle = potentiometer.value." As a general principle, it's better to start with the easiest plausible solution and complicate as needed, an idea that I will try to stick to more as we continue with circuitpython. 
+Lorem Ipsum
+
+## Robot_Claw
+
+
 
 
 
