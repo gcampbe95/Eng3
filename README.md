@@ -560,7 +560,7 @@ Wiring for this code can be found here:
 ![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202024-01-25%20111216.png)
 
 ### Reflection
-This assignment provided a needed reminder of programming
+I, future Gudrun, reflecting after the fact, happen to know that stepper motors will come in handy for my robot arm project and I'm glad to have established those foundations by completing this assignment. The steppers were a lot of fun to work with, both because of their precision and flexibility compared DC motors--While both perform a similar role, there are big differences between coding in degrees and coding in increments and it was interesting to try working from a "new perspective." I also got in a little practice with functions and tasks which, as I approach a larger programming undertaking, I anticipate using a lot. 
 
 ## IR_Sensor
  
