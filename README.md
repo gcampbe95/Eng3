@@ -13,6 +13,7 @@
 * [Stepper Motor](#Stepper_Motor)
 * [IR Sensor](#IR_Sensor)
 * [Robot Claw](#Robot_Claw)
+* [Microphone Stand](#Microphone_Stand)
 ---
 
 ## Ultrasonic_Rainbow
@@ -662,6 +663,26 @@ The finished part can be found here:
 I wanted to focus on keeping this design simple, both conceptually and in execution. To this end, I modeled a relatively basic mechanism with as few parts and fasteners as possible: instead of attaching a new part for aligning the arms, I used a notch in the frame that the arm could slide over. Instead of a more complicated sliding mechanism to accommodate the arms' expansion and contraction, I added roomy slots to the pink sliders that worked for any arm position. Going in so focused on simplicity was an interesting experience because I usually... um... *don't* do that, and it was challenging in a new way. Instead of going with my knee-jerk, complicated, out-of-scope solution to the design challenges I faced, I had to take time to be intentional with my model. I ended up with something I'm really proud of, and I think that's a valuable lesson heading into our project.  
 
 **the lobster-claw design was Josh Bricker's idea**
+
+## Microphone_Stand
+
+### Description 
+
+In this assignment, we followed the instructions in [this document](https://cvilleschools.onshape.com/documents/4bdcde0de3ff9a316f53670f/w/8cf7bd1745379fcc015f4d8c/e/58ec2be7e7700e64e4c6bf37) to model and modify a microphone stand in a multipart studio. 
+
+### Evidence
+
+![](https://github.com/gcampbe95/Eng3/blob/main/Assembly%201%20(1).png)
+![](https://github.com/gcampbe95/Eng3/blob/main/Assembly%201%20(2).png)
+![](https://github.com/gcampbe95/Eng3/blob/main/Starting%20Document.png)
+
+### Part Link
+The finished part can be found here: 
+
+**[Microphone Stand](https://cvilleschools.onshape.com/documents/8eb82d73cc4fa6640671ace5/w/397bd0e03217ea07a1ef3425/e/2320be1be3ec06c89c7b93eb)**
+
+### Reflection
+For this model, I wanted to focus on efficiency and accuracy in preparation for the Onshape certification.
 
 
 
