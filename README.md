@@ -703,7 +703,7 @@ The finished assembly can be found here:
 **[Plier Assembly](https://cvilleschools.onshape.com/documents/b6caaf1a7cefb23147f0ed84/w/e8d8190213db734763e289b2/e/410dbfdb2a50509f132db73f)**
 
 ### Reflection
-This was my first time working from assembly drawings, and it was a good lesson in following them exactly. The first iteration of the assembly took me a while because I was trying to model a functional set of pliers and *then* constrain them into the closed position, but I was able to move much faster once I began mating the assembly into the indicated position. This meant that for the closed position I used mostly fasten mates that I could change into revolutes as I progressed, which saved me a lot of time on adding limits that weren't necessary to get my assembly to look like the drawings or answer the questions. 
+This was my first time working from assembly drawings, and it was a good lesson in following them exactly. The first iteration of the assembly took me a while because I was trying to model a functional set of pliers and *then* constrain them into the closed position, but I was able to move much faster once I began mating the assembly into the indicated position. This meant that for the closed position I used mostly fasten mates that I could suppress or change into revolutes as I progressed, which saved me a lot of time on adding limits that weren't necessary to get my assembly to look like the drawings or answer the questions. 
 
 
 
