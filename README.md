@@ -610,7 +610,7 @@ Lorem Ipsum
 ## Robot_Claw
 
 ### Description 
-In this assignment we were tasked with designing a robot gripper with a single actuator.
+In this assignment, we were tasked with designing a robot gripper with a single actuator.
 
 ### Evidence
 
@@ -620,12 +620,12 @@ In this assignment we were tasked with designing a robot gripper with a single a
 ### Part Link
 The finished part can be found here: 
 
-**[Robot Claw]([https://cvilleschools.onshape.com/documents/883d46fc4e0ec8cb44f43a23/w/65ace9810c27842f6c57f290/e/85d305785d1342d48913fa3d](https://cvilleschools.onshape.com/documents/4ba18c2ee2cd43ddddbe8820/w/8c708fd334a58f0b82f6b8ad/e/38d17fe79145c4135d9e893e))**
+**[Robot Claw](https://cvilleschools.onshape.com/documents/883d46fc4e0ec8cb44f43a23/w/65ace9810c27842f6c57f290/e/85d305785d1342d48913fa3d)**
 
 ### Reflection
-I wanted to focus on keeping this design simple, both conceptually and in execution. To this end, I modeled a relatively basic mechanism with as few parts and fasteners as possible: instead of attaching a new part for alligning the arms, I used a notch in the frame that the arm could slide over. Instead of a more complicated sliding mechanism to accomodate the arms' expansion and contraction, I added roomy slots to the pink sliders that worked for any arm position. Going in so focussed on simplicity was an interesting experience because I usually... um... *don't* do that, and it was challenging in a new way. Instead of going with my knee-jerk, complicated, out-of-scope solution to the design challenges I faced, I had to take time to be intentional with my model. I ended up with something I'm really proud of, and I think that's a valuable lesson heading into our project.  
+I wanted to focus on keeping this design simple, both conceptually and in execution. To this end, I modeled a relatively basic mechanism with as few parts and fasteners as possible: instead of attaching a new part for aligning the arms, I used a notch in the frame that the arm could slide over. Instead of a more complicated sliding mechanism to accommodate the arms' expansion and contraction, I added roomy slots to the pink sliders that worked for any arm position. Going in so focused on simplicity was an interesting experience because I usually... um... *don't* do that, and it was challenging in a new way. Instead of going with my knee-jerk, complicated, out-of-scope solution to the design challenges I faced, I had to take time to be intentional with my model. I ended up with something I'm really proud of, and I think that's a valuable lesson heading into our project.  
 
-**the lobster-claw desgin was Josh Bricker's idea** (credit where credit is due)
+**the lobster-claw design was Josh Bricker's idea**
 
 
 
