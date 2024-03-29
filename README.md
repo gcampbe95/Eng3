@@ -594,7 +594,32 @@ while True:
         # print "HIGH"
         # set the neopixel to green
 ```
-To determine whether the sensor saw an object, I used...
+When I started writing the actual program, though, I ran into some problems with debouncing: my neopixel changed when I moved an object close to the sensor, but then got stuck like that. With Alexis' help, I added a variable called "ir_state" and changed my "if" statements to prevent the code from looping or getting stuck, and my final code looked like this:
+
+```Python
+import board
+import neopixel
+import digitalio
+
+ir_sensor = digitalio.DigitalInOut(board.D2)
+ir_sensor.direction = digitalio.Direction.INPUT
+ir_sensor.pull = digitalio.Pull.UP
+ir_state = None
+
+led = neopixel.NeoPixel(board.NEOPIXEL, 1)
+led.brightness = 0.3
+
+while True:
+    if not ir_sensor.value and ir_state is None:
+        print("LOW")
+        led[0] = (255, 0, 0)
+        ir_state = "state!"
+    if ir_sensor.value and ir_state == "state!":
+        print("HIGH")
+        led[0] = (0, 255, 0)
+        ir_state = None
+```
+It can also be found [here](https://github.com/gcampbe95/Eng3/blob/main/IRsensor)
 
 ### Evidence
 
