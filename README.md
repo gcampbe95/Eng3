@@ -708,6 +708,6 @@ This was my first time working from assembly drawings, and it was a good lesson 
 
 ## Rotary_Encoder
 
-Coming soon! I've been having trouble getting code to upload on my computer but I will have my documentation up as soon as the issue is fixed 
+Coming soon--I've been having trouble getting code to upload on my computer but I will have my documentation up as soon as the issue is fixed!
 
 
