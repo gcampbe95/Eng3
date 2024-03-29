@@ -625,12 +625,13 @@ It can also be found [here](https://github.com/gcampbe95/Eng3/blob/main/IRsensor
 
 ### Wiring
 Wiring for this code can be found here: 
-**[IR Wiring]()**
+**[IR Wiring](https://www.tinkercad.com/things/jtndtHdgji9-spectacular-lappi/editel?tenant=circuits)**
 
-![](https://www.tinkercad.com/things/jtndtHdgji9-spectacular-lappi/editel?tenant=circuits)
+![](https://github.com/gcampbe95/Eng3/blob/main/Screenshot%202024-03-29%208.40.56%20AM.png)
 
 ### Reflection
 
+This assignment was fairly simple, so it was a good way to brush up on best practices. Loops with two "if" statements are a pretty fundamental component of programming, and it was helpful for me to understand how they work in VS Code without the complication of additional tasks. This assignment will also provide a good reference for structuring future code, and using Pull.UP and states effectively. 
 
 ## Robot_Claw
 
