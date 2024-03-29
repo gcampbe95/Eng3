@@ -616,6 +616,8 @@ In this assignment, we were tasked with designing a robot gripper with a single 
 
 ![](https://github.com/gcampbe95/Eng3/blob/main/solenoid%20wide%20grip%20(1).png)
 ![](https://github.com/gcampbe95/Eng3/blob/main/solenoid%20wide%20grip%20(2).png)
+![]()
+![](https://github.com/gcampbe95/Eng3/blob/main/ezgif-3-71be55c4c0.gif)
 
 
 ### Part Link
