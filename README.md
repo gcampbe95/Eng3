@@ -625,9 +625,9 @@ It can also be found [here](https://github.com/gcampbe95/Eng3/blob/main/IRsensor
 
 ### Wiring
 Wiring for this code can be found here: 
-**[IR Wiring](https://www.tinkercad.com/things/9N2J4e0QSd0-stunning-gaaris/editel?tenant=circuits)**
+**[IR Wiring]()**
 
-![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
+![](https://www.tinkercad.com/things/jtndtHdgji9-spectacular-lappi/editel?tenant=circuits)
 
 ### Reflection
 
