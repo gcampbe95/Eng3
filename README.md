@@ -605,7 +605,7 @@ Wiring for this code can be found here:
 ![](https://github.com/gcampbe95/Eng3/blob/main/motorcontrol.png)
 
 ### Reflection
-Lorem Ipsum
+
 
 ## Robot_Claw
 
