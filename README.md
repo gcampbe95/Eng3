@@ -682,7 +682,7 @@ The finished part can be found here:
 **[Microphone Stand](https://cvilleschools.onshape.com/documents/8eb82d73cc4fa6640671ace5/w/397bd0e03217ea07a1ef3425/e/2320be1be3ec06c89c7b93eb)**
 
 ### Reflection
-For this model, I wanted to focus on efficiency and accuracy in preparation for the Onshape certification.
+For this model, I wanted to focus on efficiency and accuracy in preparation for the Onshape certification. Keeping the part studio true to what an assembly would look like was one of my main takeaways from the multipart cylinder, and saved me a lot of time on this model--I could drop it right into the assembly and add fasteners, and had I needed to edit in context nothing would be misaligned. I also tried to take as few extraneous actions as possible in service of editing ease, and was overall successful on that front.
 
 
 
