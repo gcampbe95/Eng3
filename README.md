@@ -15,6 +15,7 @@
 * [Robot Claw](#Robot_Claw)
 * [Microphone Stand](#Microphone_Stand)
 * [Plier Assembly](#Plier_Assembly)
+* [Rotary Encoder LCD](#Rotary_Encoder)
 ---
 
 ## Ultrasonic_Rainbow
@@ -705,6 +706,8 @@ The finished assembly can be found here:
 ### Reflection
 This was my first time working from assembly drawings, and it was a good lesson in following them exactly. The first iteration of the assembly took me a while because I was trying to model a functional set of pliers and *then* constrain them into the closed position, but I was able to move much faster once I began mating the assembly into the indicated position. This meant that for the closed position I used mostly fasten mates that I could suppress or change into revolutes as I progressed, which saved me a lot of time on adding limits that weren't necessary to get my assembly to look like the drawings or answer the questions. 
 
+## Rotary_Encoder
 
+Coming soon! I've been having trouble getting code to upload on my computer but I will have my documentation up as soon as the issue is fixed 
 
 
